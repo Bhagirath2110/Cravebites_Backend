@@ -9,7 +9,8 @@
     "dev": "nodemon server.js",
     "data:import": "node seeder.js",
     "data:destroy": "node seeder.js --destroy",
-    "setup": "node scripts/createInitialAdmin.js"
+    "setup": "node scripts/createInitialAdmin.js",
+    "build":"npm run build"
   },
   "keywords": [
     "food",
