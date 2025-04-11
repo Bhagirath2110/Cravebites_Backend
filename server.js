@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 import multer from 'multer';
 import connectDB from './config/db.js';
 import cloudinary from './config/cloudinary.js';
-import { createInitialAdmin } from './utils/createInitialAdmin.js';
+
 
 // Routes
 import categoryRoutes from './routes/categoryRoutes.js';
@@ -176,6 +176,4 @@ app.listen(PORT, () => {
   console.log(colors.cyan.bold(`🌐 API URL: http://localhost:${PORT}/api`));
   console.log(colors.rainbow('=================================================='));
 
-  // Create initial admin after DB connection
-  createInitialAdmin();
 }); 
