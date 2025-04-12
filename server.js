@@ -8,7 +8,6 @@ import { fileURLToPath } from 'url';
 import multer from 'multer';
 import connectDB from './config/db.js';
 import cloudinary from './config/cloudinary.js';
-const cors = require('cors');
 
 
 // Routes
