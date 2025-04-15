@@ -4,9 +4,10 @@ import Category from '../models/Category.js';
 // Get all products
 export const getAllProducts = async (req, res) => {
   try {
+    const sortByPrice = req.query.sortByPrice === 'asc' ? 1 : -1;
     const products = await Product.find()
       .populate('category', 'name')
-      .sort({ createdAt: -1 });
+      .sort({ price: sortByPrice });
     res.json(products);
   } catch (error) {
     console.error('Error fetching products:', error);
@@ -19,7 +20,7 @@ export const getProductsByCategory = async (req, res) => {
   try {
     const products = await Product.find({ category: req.params.categoryId })
       .populate('category', 'name')
-      .sort({ createdAt: -1 });
+      .sort({ price: 1 });
     res.json(products);
   } catch (error) {
     console.error('Error fetching products by category:', error);
